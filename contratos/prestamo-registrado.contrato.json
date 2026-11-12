@@ -1,0 +1,14 @@
+{
+  "evento": "PrestamoRegistrado",
+  "version": "1.0",
+  "camposObligatorios": ["idEvento", "tipo", "prestamoId", "lector", "correo", "libro", "registradoEn"],
+  "tipos": {
+    "idEvento": "string",
+    "tipo": "string",
+    "prestamoId": "string",
+    "lector": "string",
+    "correo": "string",
+    "libro": "string",
+    "registradoEn": "string"
+  }
+}
