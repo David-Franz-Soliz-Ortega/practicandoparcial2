@@ -1,0 +1,11 @@
+groups:
+  - name: prestamos_alertas
+    rules:
+      - alert: RechazosAltos
+        expr: sum(rate(http_request_duration_seconds_count{ruta="/prestamos", metodo="POST", codigo=~"4.."}[1m])) / sum(rate(http_request_duration_seconds_count{ruta="/prestamos", metodo="POST"}[1m])) > 0.2
+        for: 1m
+        labels:
+          severidad: critica
+        annotations:
+          resumen: "Mas del 20% de respuestas 4xx en POST /prestamos"
+          accion: "Revisar datos enviados desde clientes"
